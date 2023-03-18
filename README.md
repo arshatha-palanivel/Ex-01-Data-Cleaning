@@ -71,6 +71,8 @@ NON NULL AFTER:
 ![](./DC%209.png)
 ![](./DC%2010.png)
 
+
+
 # RESULT
 
 Thus, the given data is read, cleansed and the cleansed data is saved into the file.
