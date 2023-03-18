@@ -19,4 +19,58 @@ Remove the null values from the data
 Save the Clean data to the file
 
 # CODE
-# OUPUT
+~~~py
+import pandas as pd
+df=pd.read_csv("/content/Loan_data.csv")
+print(df)
+df.head(10)
+df.info()
+df.isnull()
+df.isnull().sum()
+df['Loan_ID']=df['Loan_ID'].fillna(df['Dependents'].mode()[0])
+df['Dependents']=df['Dependents'].fillna(df['Dependents'].mode()[0])
+df['Education']=df['Education'].fillna(df['Dependents'].mode()[0])
+df.head()
+df['ApplicantIncome']=df['ApplicantIncome'].fillna(df['ApplicantIncome'].mean())
+df['Loan_Amount_Term']=df['Loan_Amount_Term'].fillna(df['Loan_Amount_Term'].mean())
+df.head()
+df['Credit_History']=df['Credit_History'].fillna(df['Credit_History'].median())
+df.head()
+df.info()
+df.isnull().sum()
+~~~
+
+# OUTPUT
+
+DATA:
+
+![](./DC%201.png)
+
+![](./DC%202.png)
+
+NON NULL BEFORE:
+
+![](./DC%203.png)
+![](./DC%204.png)
+![](./DC%205.png)
+
+MODE:
+
+![](./DC%206.png)
+
+MEAN:
+
+![](./DC%207.png)
+
+MEDIAN:
+
+![](./DC%208.png)
+
+NON NULL AFTER:
+
+![](./DC%209.png)
+![](./DC%2010.png)
+
+# RESULT
+
+Thus, the given data is read, cleansed and the cleansed data is saved into the file.
